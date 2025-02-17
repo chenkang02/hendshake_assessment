@@ -52,7 +52,7 @@ function App() {
     setFormData({
       activity: '',
       price: '',
-      type: 'education',
+      type: 'Education',
       bookingRequired: false,
       accessibility: 0.5
     });
@@ -63,8 +63,7 @@ function App() {
 
   return (
     <div className="app">
-      <h1>Todo List (0 items)</h1>
-
+      <h1>Todo List ({todos.length} {todos.length > 1 ? "items" : "item"})</h1>
       <form onSubmit={handleSubmit} className="todo-create-form">
         <div className="form-group">
           <label htmlFor="activity">Activity:</label>
@@ -98,15 +97,15 @@ function App() {
             value={formData.type}
             onChange={handleChange}
           >
-            <option value="education">Education</option>
-            <option value="recreational">Recreational</option>
-            <option value="social">Social</option>
-            <option value="diy">DIY</option>
-            <option value="charity">Charity</option>
-            <option value="cooking">Cooking</option>
-            <option value="relaxation">Relaxation</option>
-            <option value="music">Music</option>
-            <option value="busywork">Busywork</option>
+            <option value="Education">Education</option>
+            <option value="Recreational">Recreational</option>
+            <option value="Social">Social</option>
+            <option value="DIY">DIY</option>
+            <option value="Charity">Charity</option>
+            <option value="Cooking">Cooking</option>
+            <option value="Relaxation">Relaxation</option>
+            <option value="Music">Music</option>
+            <option value="Busywork">Busywork</option>
           </select>
         </div>
 
@@ -140,6 +139,7 @@ function App() {
 
         <button type="submit">Add Todo</button>
       </form>
+      {/* map to dos to a list of to do */}
       <div className="todo-list">
         {todos.map((todo) => (
           <div key={todo.id} className="individual-todo">
